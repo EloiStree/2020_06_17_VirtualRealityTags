@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,8 +23,10 @@ public class FollowVirtualRealityTagAbstract : MonoBehaviour
     {
         m_affect = transform;
     }
-    private void OnValidate()
+
+    public void SwitchTo(VirtualRealityClassicTags virtualRealityClassicTags)
     {
-        m_foundToFollow = null;
+        m_toFollow = virtualRealityClassicTags;
+        GetTransform(true);
     }
 }

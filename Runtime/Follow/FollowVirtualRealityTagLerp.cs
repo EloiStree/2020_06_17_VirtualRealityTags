@@ -11,10 +11,11 @@ public class FollowVirtualRealityTagLerp : FollowVirtualRealityTagAbstract
     public bool m_useRotation=true;
     public float m_rotationLerpSpeed=2f;
 
+    public bool m_flyWeightLoad=true;
 
     void Update()
     {
-        Transform t = GetTransform(false);
+        Transform t = GetTransform(!m_flyWeightLoad);
         if (t == null) 
             return;
         if(m_usePosition)

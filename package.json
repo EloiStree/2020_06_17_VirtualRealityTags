@@ -8,8 +8,13 @@
   "description": "Allow to access the virtual reality position and rotation of anchors without know what native api is behind it",                         
   "keywords": ["Script","Tool"],                       
   "dependencies":{},     
-  "relatedPackages":{},     
-  "samples" : [],     
+  "relatedPackages":{},    ,     
+  "samples" : [
+      {
+        "displayName":"How to use Demo" ,
+        "description":"Demo with examples of how to use" ,
+        "path":"Samples/HowToUse"
+    }],   
   "author" : {
 "name":"Eloi Stree",
 "mail":"",
