@@ -14,7 +14,7 @@ public class FollowVirtualRealityTagAbstract : MonoBehaviour
         if (m_foundToFollow == null || useOverride)
         { 
             bool found;
-            VirtualRealityTags.GetClassiVrTag(m_toFollow, out found, out m_foundToFollow);
+            VirtualRealityTags.GetClassicVrTag(m_toFollow, out found, out m_foundToFollow);
         }
 
         return m_foundToFollow;

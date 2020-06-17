@@ -18,7 +18,7 @@ public  static class VirtualRealityTags
 
 
     public static Transform GetVirtualRealityRootAnchor() { return m_virtualRealityRoot; }
-    public static void GetClassiVrTag(VirtualRealityClassicTags tag, out bool found, out Transform targetFound)
+    public static void GetClassicVrTag(VirtualRealityClassicTags tag, out bool found, out Transform targetFound)
     {
         found = m_virtualRealityTagsRegister.ContainsKey(tag);
         if (found) {
