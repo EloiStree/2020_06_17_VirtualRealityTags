@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FingerTagMono : MonoBehaviour, I_StaticFacadeSetter
 {
+    public SideType m_handSide;
     public FingerTags m_fingerType;
     public Transform m_target;
     public void Awake()
@@ -13,7 +14,7 @@ public class FingerTagMono : MonoBehaviour, I_StaticFacadeSetter
 
     public void OverrideStaticFacadeWithInfo()
     {
-        VirtualRealityTags.SetFingerTip(m_fingerType, m_target);
+        VirtualRealityTags.SetFingerTip(m_handSide, m_fingerType, m_target);
     }
 
     private void Reset()

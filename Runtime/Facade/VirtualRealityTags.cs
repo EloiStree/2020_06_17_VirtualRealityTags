@@ -7,7 +7,7 @@ public  static class VirtualRealityTags
 {
 
     private static Dictionary<VirtualRealityClassicTags, Transform> m_virtualRealityTagsRegister = new Dictionary<VirtualRealityClassicTags, Transform>();
-    private static Dictionary<FingerTags, Transform> m_fingerTipTagsRegister = new Dictionary<FingerTags, Transform>();
+    private static Dictionary<string, Transform> m_fingerTipTagsRegister = new Dictionary<string, Transform>();
     private static Dictionary<string, Transform> m_fingerBoneFromLeafTagsRegister = new Dictionary<string, Transform>();
     private static Dictionary<string, Transform> m_fingerBoneFromRootTagsRegister = new Dictionary<string, Transform>();
     private static Transform m_virtualRealityRoot;
@@ -35,21 +35,25 @@ public  static class VirtualRealityTags
     }
 
 
-    public static void GetFingerTipOf(FingerTags tag, out bool found, out Transform targetFound)
+    public static void GetFingerTipOf(SideType handSide, FingerTags tag, out bool found, out Transform targetFound)
     {
-        found = m_fingerTipTagsRegister.ContainsKey(tag);
+        string id = GetAsId(handSide, tag);
+        found = m_fingerTipTagsRegister.ContainsKey(id);
         if (found) {
-            targetFound = m_fingerTipTagsRegister[tag];
+            targetFound = m_fingerTipTagsRegister[id];
         }
         else
             targetFound = null;
     }
-    public static void SetFingerTip(FingerTags tagType, Transform target)
+
+    public static void SetFingerTip(SideType handSide, FingerTags tagType, Transform target)
     {
-        if (!m_fingerTipTagsRegister.ContainsKey(tagType))
-            m_fingerTipTagsRegister.Add(tagType, target);
-        else m_fingerTipTagsRegister[tagType] = target;
+        string id = GetAsId(handSide, tagType);
+        if (!m_fingerTipTagsRegister.ContainsKey(id))
+            m_fingerTipTagsRegister.Add(id, target);
+        else m_fingerTipTagsRegister[id] = target;
     }
+    private static string GetAsId(SideType handSide, FingerTags tag) { return handSide.ToString() + tag.ToString(); }
 
 
     public static void SetFingerBoneAnchorFromLeaf(SideType side, FingerTags tag, int index, Transform target)
