@@ -1,11 +1,10 @@
-
 {                                                                                
   "name": "be.eloistree.virtualrealitytags",                              
   "displayName": "Virtual Reality Tag",                        
   "version": "0.0.1",                         
   "unity": "2018.1",                             
   "unityRelease": "",                             
-  "description": "Allow to access the virtual reality position and rotation of anchors without know what native api is behind it",                         
+  "description": "Allow to access the virtual reality position and rotation of anchors without know what native api is behind it..",                         
   "keywords": ["Script","Tool"],                       
   "dependencies":{},     
   "relatedPackages":{},     
