@@ -6,7 +6,7 @@
   "unityRelease": "",                             
   "description": "Allow to access the virtual reality position and rotation of anchors without know what native api is behind it..",                         
   "keywords": ["Script","Tool"],                       
-  "dependencies":{},     
+  "dependencies":{ "be.eloistree.license":"0.0.1"},     
   "relatedPackages":{},     
   "samples" : [
       {
